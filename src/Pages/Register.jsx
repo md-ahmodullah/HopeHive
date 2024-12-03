@@ -1,12 +1,65 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle, FaLink } from "react-icons/fa";
+import { IoWarning } from "react-icons/io5";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 export default function Register() {
   const [isShow, setIsShow] = useState(false);
   const handleShow = () => {
     setIsShow(!isShow);
+  };
+  const { user, setUser, createUser, signInWithGoogle } =
+    useContext(AuthContext);
+  const [errMessage, setErrMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const name = data.get("name");
+    const photoURL = data.get("photo");
+    const email = data.get("email");
+    const password = data.get("password");
+
+    const validation = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (!validation.test(password)) {
+      setErrMessage("Must be at least 6 char including upper & lower case");
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        const newUser = {
+          displayName: name,
+          photoURL: photoURL,
+          email: email,
+          password: password,
+        };
+        setUser(newUser);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message?.split("auth/")[1];
+        const displayError = errorMessage?.split(").")[0];
+        setErrMessage(displayError);
+      });
+  };
+
+  const handleGoogleSignup = (e) => {
+    e.preventDefault();
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message.split("auth/")[1];
+        const displayError = errorMessage.split(").")[0];
+        setErrMessage(displayError);
+      });
   };
   return (
     <>
@@ -16,7 +69,7 @@ export default function Register() {
             <h1 className="text-2xl font-bold text-deepTeal">Register</h1>
           </div>
           <div className="px-5 py-1">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-semibold">Name</span>
@@ -119,19 +172,19 @@ export default function Register() {
                 </span>
               </div>
               <div className="flex w-full flex-col border-opacity-50 form-control mt-3">
-                {/* <div>
+                <div>
                   {errMessage && (
                     <span className="text-xs text-red-500 flex items-center gap-1 pb-3">
                       <IoWarning className="text-2xl" /> {errMessage}
                     </span>
                   )}
-                </div> */}
+                </div>
                 <button className="btn bg-blue-600 font-semibold text-white">
                   Register
                 </button>
                 <div className="divider">OR</div>
                 <button
-                  // onClick={handleGoogleSignup}
+                  onClick={handleGoogleSignup}
                   className="btn btn-outline mb-3 text-white bg-blue-600"
                 >
                   <FaGoogle /> Sign Up with Google

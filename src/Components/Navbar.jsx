@@ -41,9 +41,12 @@ export default function Navbar() {
             <img
               src="https://i.ibb.co.com/JBc6RpV/Screenshot-19-removebg-preview.png"
               alt="Logo"
-              className="w-12"
+              className="w-12 hidden md:flex"
             />
-            <Link to="/" className="text-3xl text-blue-600 font-bold">
+            <Link
+              to="/"
+              className="text-2xl md:text-3xl text-blue-600 font-bold"
+            >
               HopeHive
             </Link>
           </div>

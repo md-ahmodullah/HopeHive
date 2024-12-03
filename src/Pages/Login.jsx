@@ -1,8 +1,51 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
+import { IoWarning } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 export default function Login() {
   const [isShow, setIsShow] = useState(false);
+  const { loginUser, signInWithGoogle, user, setUser } =
+    useContext(AuthContext);
+  const [errMessage, setErrMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const email = data.get("email");
+    const password = data.get("password");
+
+    const validation = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (!validation.test(password)) {
+      setErrMessage("Must be at least 6 char including upper & lower case");
+      return;
+    }
+
+    loginUser(email, password)
+      .then((result) => {
+        const newUser = result.user;
+        setUser(newUser);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error?.message?.split("auth/")[1];
+        const displayError = errorMessage?.split(").")[0];
+        setErrMessage(displayError);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error?.message?.split("auth/")[1];
+        const displayError = errorMessage?.split(").")[0];
+        setErrMessage(displayError);
+      });
+  };
 
   const handleShow = () => {
     setIsShow(!isShow);
@@ -15,7 +58,7 @@ export default function Login() {
             <h1 className="text-2xl font-bold text-deepTeal">Login</h1>
           </div>
           <div className="px-2 py-3 space-y-2">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-semibold">Email</span>
@@ -80,20 +123,20 @@ export default function Login() {
                 </label>
               </div>
               <div className="flex w-full flex-col border-opacity-50 form-control mt-2">
-                {/* <div>
+                <div>
                   {errMessage && (
                     <span className="text-base text-red-500 flex items-center gap-1 pb-3">
                       <IoWarning className="text-xl" /> {errMessage}
                     </span>
                   )}
-                </div> */}
+                </div>
                 <button className="btn bg-blue-600 font-bold text-white">
                   Login
                 </button>
                 <div className="divider">OR</div>
                 <button
                   className="btn btn-outline mb-3 text-white bg-blue-600"
-                  // onClick={handleGoogleLogin}
+                  onClick={handleGoogleLogin}
                 >
                   <FaGoogle /> Sign In with Google
                 </button>
