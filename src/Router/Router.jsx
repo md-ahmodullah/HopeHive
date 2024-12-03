@@ -1,11 +1,53 @@
 import { createBrowserRouter } from "react-router-dom";
+import AuthLayout from "../Layout/AuthLayout";
+import HomeLayout from "../Layout/HomeLayout";
+import AddNewCampaign from "../Pages/AddNewCampaign";
+import AllCampaign from "../Pages/AllCampaign";
+import ErrorPage from "../Pages/ErrorPage";
+import Login from "../Pages/Login";
+import MyCampaign from "../Pages/MyCampaign";
+import MyDonations from "../Pages/MyDonations";
+import Register from "../Pages/Register";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <HomeLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <div>Hi</div>,
+      },
+      {
+        path: "/all-campaign",
+        element: <AllCampaign />,
+      },
+      {
+        path: "/add-new-campaign",
+        element: <AddNewCampaign />,
+      },
+      {
+        path: "/my-campaign",
+        element: <MyCampaign />,
+      },
+      {
+        path: "/my-donations",
+        element: <MyDonations />,
+      },
+    ],
   },
   {
-    path: "/about",
-    element: <div>about</div>,
+    path: "/auth",
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "/auth/login",
+        element: <Login />,
+      },
+      {
+        path: "/auth/register",
+        element: <Register />,
+      },
+    ],
   },
 ]);

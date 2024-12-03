@@ -1,8 +1,8 @@
-import { createContext } from "react-router-dom";
+import { createContext } from "react";
 
 export const AuthContext = createContext();
 
-export default function AuthProvider() {
+export default function AuthProvider({ children }) {
   const authInfo = {
     name: "Ahmod",
   };
