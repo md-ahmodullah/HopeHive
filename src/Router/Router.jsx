@@ -4,6 +4,7 @@ import HomeLayout from "../Layout/HomeLayout";
 import AddNewCampaign from "../Pages/AddNewCampaign";
 import AllCampaign from "../Pages/AllCampaign";
 import ErrorPage from "../Pages/ErrorPage";
+import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import MyCampaign from "../Pages/MyCampaign";
 import MyDonations from "../Pages/MyDonations";
@@ -16,7 +17,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>Hi</div>,
+        element: <Home />,
       },
       {
         path: "/all-campaign",
