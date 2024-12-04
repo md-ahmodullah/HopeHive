@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash, FaGoogle, FaLink } from "react-icons/fa";
 import { IoWarning } from "react-icons/io5";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 
 export default function Register() {
@@ -35,6 +36,7 @@ export default function Register() {
           password: password,
         };
         setUser(newUser);
+        Swal.fire("Register Successfully!");
         navigate("/");
       })
       .catch((error) => {
@@ -51,6 +53,7 @@ export default function Register() {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        Swal.fire("Sign-up Successfully!");
         navigate("/");
       })
       .catch((error) => {

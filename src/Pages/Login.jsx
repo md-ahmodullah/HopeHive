@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { IoWarning } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 export default function Login() {
   const [isShow, setIsShow] = useState(false);
@@ -26,6 +27,7 @@ export default function Login() {
       .then((result) => {
         const newUser = result.user;
         setUser(newUser);
+        Swal.fire("Login Successfully!");
         navigate("/");
       })
       .catch((error) => {
@@ -39,6 +41,7 @@ export default function Login() {
   const handleGoogleLogin = () => {
     signInWithGoogle()
       .then((result) => {
+        Swal.fire("Sign-in Successfully!");
         navigate("/");
       })
       .catch((error) => {

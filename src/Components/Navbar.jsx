@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 export default function Navbar() {
   const { user, logOut } = useContext(AuthContext);
+
   const links = (
     <>
       <NavLink to="/">Home</NavLink>
@@ -66,12 +67,15 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="navbar-end gap-3">
-          {user ? (
+          {user && user.email ? (
             <>
               <img
-                src={user.photoURL}
+                src={
+                  user?.photoURL || "https://i.ibb.co.com/cJWSt88/user-1.png"
+                }
                 alt=""
                 className="w-12 h-12 object-cover rounded-full border-2 border-blue-600 p-1"
+                title={user?.displayName || "Failed to Get"}
               />
               <button
                 onClick={handleLogOut}
