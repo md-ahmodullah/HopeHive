@@ -23,8 +23,8 @@ export default function Navbar() {
   };
 
   return (
-    <section className="w-11/12 mx-auto">
-      <div className="navbar bg-base-100 py-3">
+    <section className="w-11/12 mx-auto font-poppins">
+      <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
