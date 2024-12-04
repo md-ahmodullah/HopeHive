@@ -57,7 +57,7 @@ export default function Login() {
   };
   return (
     <>
-      <div className="my-6 py-5 lg:py-16">
+      <div className="my-6 py-5 lg:py-16 font-poppins">
         <div className="card bg-base-200 w-full md:w-1/2 lg:w-1/3 mx-auto shrink-0 shadow-2xl px-6">
           <div className="text-center px-5 py-3">
             <h1 className="text-2xl font-bold text-deepTeal">Login</h1>

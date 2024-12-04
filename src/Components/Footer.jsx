@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <section className="bg-blue-100">
+    <section className="bg-blue-100 font-poppins">
       <footer className="footer text-base-content p-10 w-11/12 mx-auto">
         <aside className="flex items-center gap-4">
           <img

@@ -2,7 +2,7 @@ import { FiSearch } from "react-icons/fi";
 export default function Slider1() {
   return (
     <section className="font-poppins text-white">
-      <div className="bg-[url('https://i.ibb.co.com/RYrhw59/Blog-page-images-3-141-768x402.jpg')] bg-blue-600 bg-blend-multiply bg-no-repeat bg-cover rounded-lg min-h-[500px]">
+      <div className="bg-[url('https://i.ibb.co.com/ftk4fcW/slider1.jpg')] bg-blue-600 bg-blend-multiply bg-no-repeat bg-cover rounded-lg min-h-[500px]">
         <div className="flex flex-col items-center justify-center w-3/4 mx-auto py-8 space-y-10">
           <p className="bg-blue-500 text-yellow-200 px-4 py-2 text-xs font-normal rounded-full shadow-md">
             #1 trusted fund-raising platform

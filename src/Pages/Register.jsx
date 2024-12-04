@@ -69,7 +69,7 @@ export default function Register() {
   };
   return (
     <>
-      <div className="mb-6 py-5 lg:py-4">
+      <div className="mb-6 py-5 lg:py-4 font-poppins">
         <div className="card bg-base-200 w-full md:w-1/2 lg:w-1/3 mx-auto shrink-0 shadow-2xl px-5">
           <div className="text-center px-5 pt-3">
             <h1 className="text-2xl font-bold text-deepTeal">Register</h1>
