@@ -1,14 +1,26 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 export default function Navbar() {
+  const { user, logOut } = useContext(AuthContext);
   const links = (
     <>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/all-campaign">All Campaign</NavLink>
-      <NavLink to="/add-new-campaign">Add New Campaign</NavLink>
-      <NavLink to="/my-campaign">My Campaign</NavLink>
-      <NavLink to="/my-donations">My Donations</NavLink>
+      {user && (
+        <>
+          <NavLink to="/add-new-campaign">Add New Campaign</NavLink>
+          <NavLink to="/my-campaign">My Campaign</NavLink>
+          <NavLink to="/my-donations">My Donations</NavLink>
+        </>
+      )}
     </>
   );
+
+  const handleLogOut = () => {
+    logOut();
+  };
+
   return (
     <section className="w-11/12 mx-auto">
       <div className="navbar bg-base-100 py-3">
@@ -41,28 +53,43 @@ export default function Navbar() {
             <img
               src="https://i.ibb.co.com/JBc6RpV/Screenshot-19-removebg-preview.png"
               alt="Logo"
-              className="w-12 hidden md:flex"
+              className="w-10 hidden md:flex"
             />
-            <Link
-              to="/"
-              className="text-2xl md:text-3xl text-blue-600 font-bold"
-            >
+            <Link to="/" className="text-2xl text-blue-600 font-bold">
               HopeHive
             </Link>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-8 items-center">
+          <ul className="menu menu-horizontal px-1 gap-6 items-center">
             {links}
           </ul>
         </div>
         <div className="navbar-end gap-3">
-          <Link to="/auth/login" className="btn bg-blue-600 text-white">
-            Login
-          </Link>
-          <Link to="/auth/register" className="btn bg-blue-600 text-white">
-            Register
-          </Link>
+          {user ? (
+            <>
+              <img
+                src={user.photoURL}
+                alt=""
+                className="w-12 h-12 object-cover rounded-full border-2 border-blue-600 p-1"
+              />
+              <button
+                onClick={handleLogOut}
+                className="btn bg-blue-600 text-white"
+              >
+                Log Out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/auth/login" className="btn bg-blue-600 text-white">
+                Login
+              </Link>
+              <Link to="/auth/register" className="btn bg-blue-600 text-white">
+                Register
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </section>

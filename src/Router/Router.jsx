@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import MyCampaign from "../Pages/MyCampaign";
 import MyDonations from "../Pages/MyDonations";
 import Register from "../Pages/Register";
+import PrivateRouter from "./PrivateRouter";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -25,15 +26,27 @@ export const router = createBrowserRouter([
       },
       {
         path: "/add-new-campaign",
-        element: <AddNewCampaign />,
+        element: (
+          <PrivateRouter>
+            <AddNewCampaign />
+          </PrivateRouter>
+        ),
       },
       {
         path: "/my-campaign",
-        element: <MyCampaign />,
+        element: (
+          <PrivateRouter>
+            <MyCampaign />
+          </PrivateRouter>
+        ),
       },
       {
         path: "/my-donations",
-        element: <MyDonations />,
+        element: (
+          <PrivateRouter>
+            <MyDonations />
+          </PrivateRouter>
+        ),
       },
     ],
   },

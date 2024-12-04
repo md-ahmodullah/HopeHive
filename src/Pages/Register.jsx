@@ -2,17 +2,14 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle, FaLink } from "react-icons/fa";
 import { IoWarning } from "react-icons/io5";
 import { MdDriveFileRenameOutline } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 export default function Register() {
-  const [isShow, setIsShow] = useState(false);
-  const handleShow = () => {
-    setIsShow(!isShow);
-  };
   const { user, setUser, createUser, signInWithGoogle } =
     useContext(AuthContext);
   const [errMessage, setErrMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,6 +35,7 @@ export default function Register() {
           password: password,
         };
         setUser(newUser);
+        navigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -53,6 +51,7 @@ export default function Register() {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        navigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -60,6 +59,10 @@ export default function Register() {
         const displayError = errorMessage.split(").")[0];
         setErrMessage(displayError);
       });
+  };
+  const [isShow, setIsShow] = useState(false);
+  const handleShow = () => {
+    setIsShow(!isShow);
   };
   return (
     <>

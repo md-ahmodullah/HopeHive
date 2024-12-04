@@ -1,13 +1,14 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { IoWarning } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 export default function Login() {
   const [isShow, setIsShow] = useState(false);
   const { loginUser, signInWithGoogle, user, setUser } =
     useContext(AuthContext);
   const [errMessage, setErrMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +26,7 @@ export default function Login() {
       .then((result) => {
         const newUser = result.user;
         setUser(newUser);
+        navigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -37,7 +39,7 @@ export default function Login() {
   const handleGoogleLogin = () => {
     signInWithGoogle()
       .then((result) => {
-        console.log(result);
+        navigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;
