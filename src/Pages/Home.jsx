@@ -1,5 +1,7 @@
 import Banner from "../Components/BannerComponent/Banner";
+import Category from "../Components/ExtraSection/Category";
 import HowItWorks from "../Components/ExtraSection/HowItWorks";
+import Reviews from "../Components/ExtraSection/Reviews";
 export default function Home() {
   return (
     <section>
@@ -7,7 +9,9 @@ export default function Home() {
         <Banner />
       </div>
       <div>
+        <Category />
         <HowItWorks />
+        <Reviews />
       </div>
     </section>
   );

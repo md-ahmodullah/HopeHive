@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "category_name": "Real Estate",
+    "number_of_projects": 25,
+    "icon": "https://i.ibb.co/8c4qPDt/house.png",
+    "color": "blue-100"
+  },
+  {
+    "id": 2,
+    "category_name": "Health & Medicine",
+    "number_of_projects": 18,
+    "icon": "https://i.ibb.co/RBv6w5J/health.png",
+    "color": "yellow-200"
+  },
+  {
+    "id": 3,
+    "category_name": "Making App",
+    "number_of_projects": 32,
+    "icon": "https://i.ibb.co/m9F2wT1/app-development.png",
+    "color": "blue-100"
+  },
+  {
+    "id": 4,
+    "category_name": "Automotive",
+    "number_of_projects": 12,
+    "icon": "https://i.ibb.co/ZgtZKnL/3d-car.png",
+    "color": "yellow-200"
+  },
+  {
+    "id": 5,
+    "category_name": "Food and Dining",
+    "number_of_projects": 45,
+    "icon": "https://i.ibb.co/YWRWPcM/healthy-food.png",
+    "color": "yellow-200"
+  },
+  {
+    "id": 6,
+    "category_name": "Education",
+    "number_of_projects": 28,
+    "icon": "https://i.ibb.co/fqgMsTP/education.png",
+    "color": "blue-100"
+  },
+  {
+    "id": 7,
+    "category_name": "Technology",
+    "number_of_projects": 38,
+    "icon": "https://i.ibb.co/LRGvK5C/tech.png",
+    "color": "yellow-200"
+  },
+  {
+    "id": 8,
+    "category_name": "Arts & Culture",
+    "number_of_projects": 15,
+    "icon": "https://i.ibb.co/qrYCN2b/arts.png",
+    "color": "blue-100"
+  },
+  {
+    "id": 9,
+    "category_name": "Environment",
+    "number_of_projects": 22,
+    "icon": "https://i.ibb.co/Ry7tvBy/environment.png",
+    "color": "blue-100"
+  },
+  {
+    "id": 10,
+    "category_name": "Social Impact",
+    "number_of_projects": 35,
+    "icon": "https://i.ibb.co/cgKj7jn/kindpng-7165930.png",
+    "color": "yellow-200"
+  },
+  {
+    "id": 11,
+    "category_name": "Animal Welfare",
+    "number_of_projects": 10,
+    "icon": "https://i.ibb.co/XLDxGdD/animal-welfare.png",
+    "color": "blue-100"
+  },
+  {
+    "id": 12,
+    "category_name": "Community",
+    "number_of_projects": 20,
+    "icon": "https://i.ibb.co/SXjgG27/community.png",
+    "color": "yellow-200"
+  }
+]
