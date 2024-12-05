@@ -1,4 +1,38 @@
+import Swal from "sweetalert2";
 export default function AddNewCampaign() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const title = form.title.value;
+    const type = form.type.value;
+    const description = form.description.value;
+    const amount = form.amount.value;
+    const deadline = form.deadline.value;
+    const photo = form.photo.value;
+    const newCampaign = { title, type, description, amount, deadline, photo };
+    console.log(newCampaign);
+
+    fetch("http://localhost:5000/campaign", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCampaign),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your campaign has been saved",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+        }
+      });
+  };
   return (
     <>
       <div className="bg-[url('https://i.ibb.co.com/WzQqTmX/bg-addnew.png')] bg-blue-700 bg-blend-multiply bg-no-repeat bg-cover bg-center min-h-screen font-poppins">
@@ -8,7 +42,10 @@ export default function AddNewCampaign() {
               Add New Campaign
             </h2>
             <div className="space-y-3 pt-8">
-              <form className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <form
+                className="grid grid-cols-1 md:grid-cols-2 gap-5"
+                onSubmit={handleSubmit}
+              >
                 <div>
                   <label className="label">
                     <span className="label-text text-white text-lg">
@@ -44,6 +81,7 @@ export default function AddNewCampaign() {
                   <input
                     type="text"
                     placeholder="e.g. Change Starts Here"
+                    name="title"
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-gray-200"
                     required
                   />
@@ -57,6 +95,7 @@ export default function AddNewCampaign() {
                   <input
                     type="text"
                     placeholder="e.g. Startup, Business, Ideas"
+                    name="type"
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-gray-200"
                     required
                   />
@@ -70,6 +109,7 @@ export default function AddNewCampaign() {
                   <input
                     type="text"
                     placeholder="e.g. It is quite brilliant move to start changes through crowd funding.."
+                    name="description"
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-gray-200"
                     required
                   />
@@ -83,6 +123,7 @@ export default function AddNewCampaign() {
                   <input
                     type="number"
                     placeholder="e.g. 1200"
+                    name="amount"
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-gray-200 appearance-none"
                     style={{
                       colorScheme: "dark",
@@ -99,6 +140,7 @@ export default function AddNewCampaign() {
                   <input
                     type="date"
                     placeholder="e.g. dd/mm/yyyy"
+                    name="deadline"
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-gray-200 appearance-none"
                     style={{
                       colorScheme: "dark",
@@ -115,6 +157,7 @@ export default function AddNewCampaign() {
                   <input
                     type="text"
                     placeholder="e.g. https://i.ibb.co.com/crowdfunding.png"
+                    name="photo"
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-gray-200"
                     required
                   />

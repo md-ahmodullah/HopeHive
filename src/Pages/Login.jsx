@@ -58,7 +58,7 @@ export default function Login() {
   return (
     <>
       <div className="bg-[url('https://i.ibb.co.com/WzQqTmX/bg-addnew.png')] bg-blue-700 bg-blend-multiply bg-no-repeat bg-cover bg-center min-h-[600px] font-poppins">
-        <div className="my-6 py-5 lg:py-16 font-poppins">
+        <div className="my-6 py-5 lg:py-16 font-poppins px-6">
           <div className="bg-blue-600 bg-opacity-20 backdrop-blur-sm rounded-lg border border-gray-400 w-full md:w-1/2 lg:w-1/3 mx-auto shrink-0 shadow-2xl px-6">
             <div className="text-center px-5 py-3">
               <h1 className="text-2xl font-semibold text-yellow-300">
@@ -69,7 +69,7 @@ export default function Login() {
               <form onSubmit={handleSubmit}>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text font-semibold text-white text-lg">
+                    <span className="label-text font-medium text-white text-lg">
                       Email
                     </span>
                   </label>
@@ -94,7 +94,7 @@ export default function Login() {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text font-semibold text-white text-lg">
+                    <span className="label-text font-medium text-white text-lg">
                       Password
                     </span>
                   </label>

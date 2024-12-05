@@ -70,7 +70,7 @@ export default function Register() {
   return (
     <>
       <div className="bg-[url('https://i.ibb.co.com/WzQqTmX/bg-addnew.png')] bg-blue-700 bg-blend-multiply bg-no-repeat bg-cover bg-center min-h-[500px] font-poppins">
-        <div className="py-5 lg:py-4 font-poppins">
+        <div className="py-5 lg:py-4 font-poppins px-6">
           <div className="bg-blue-600 bg-opacity-20 backdrop-blur-sm rounded-lg border border-gray-400 w-full md:w-1/2 lg:w-1/3 mx-auto shrink-0 shadow-2xl px-5">
             <div className="text-center px-5 pt-3">
               <h1 className="text-2xl font-semibold text-yellow-300">
