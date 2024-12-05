@@ -11,7 +11,7 @@
     "category_name": "Health & Medicine",
     "number_of_projects": 18,
     "icon": "https://i.ibb.co/RBv6w5J/health.png",
-    "color": "yellow-200"
+    "color": "white"
   },
   {
     "id": 3,
@@ -25,7 +25,7 @@
     "category_name": "Automotive",
     "number_of_projects": 12,
     "icon": "https://i.ibb.co/ZgtZKnL/3d-car.png",
-    "color": "yellow-200"
+    "color": "white"
   },
   {
     "id": 5,
@@ -39,7 +39,7 @@
     "category_name": "Education",
     "number_of_projects": 28,
     "icon": "https://i.ibb.co/fqgMsTP/education.png",
-    "color": "yellow-200"
+    "color": "white"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "category_name": "Arts & Culture",
     "number_of_projects": 15,
     "icon": "https://i.ibb.co/qrYCN2b/arts.png",
-    "color": "yellow-200"
+    "color": "white"
   },
   {
     "id": 9,
@@ -67,7 +67,7 @@
     "category_name": "Social Impact",
     "number_of_projects": 35,
     "icon": "https://i.ibb.co/cgKj7jn/kindpng-7165930.png",
-    "color": "yellow-200"
+    "color": "white"
   },
   {
     "id": 11,
@@ -81,6 +81,6 @@
     "category_name": "Community",
     "number_of_projects": 20,
     "icon": "https://i.ibb.co/SXjgG27/community.png",
-    "color": "yellow-200"
+    "color": "white"
   }
 ]

@@ -34,7 +34,7 @@ export default function Slider3() {
           </div>
         </div>
 
-        <div className="w-3/4 mx-auto py-8 flex flex-col lg:flex items-center gap-5 lg:gap-20">
+        <div className="w-3/4 mx-auto py-8 flex flex-col lg:flex-row items-center gap-5 lg:gap-20">
           <div className="bg-blue-600 bg-opacity-20 backdrop-blur-sm p-5 rounded-lg border border-gray-400">
             <div className="space-y-3">
               <h2 className="text-xl md:text-3xl font-bold">

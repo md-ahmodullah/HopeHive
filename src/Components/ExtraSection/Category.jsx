@@ -20,7 +20,7 @@ export default function Category() {
           {data.map((d) => (
             <div
               key={d.id}
-              className={`bg-${d?.color} rounded-lg px-5 py-3 text-black flex items-center justify-center gap-2`}
+              className={`bg-${d?.color} rounded-lg px-5 py-3 text-black flex items-center justify-center gap-2 shadow-md hover:transition-transform hover:-translate-y-1.5 `}
             >
               <img
                 src={d.icon}
