@@ -3,9 +3,9 @@ export default function HowItWorks() {
   return (
     <section className="bg-blue-50 my-10 font-poppins">
       <div className="w-3/4 mx-auto py-16 space-y-12">
-        <div className="grid grid-cols-2 items-center gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5">
           <div className="space-y-5">
-            <h2 className="text-4xl font-semibold">
+            <h2 className="text-3xl lg:text-4xl font-semibold">
               An Exploration of <br />
               How it works
             </h2>
@@ -13,7 +13,7 @@ export default function HowItWorks() {
               Create An Account
             </Link>
           </div>
-          <p className="text-sm text-gray-600 px-12 text-justify">
+          <p className="text-sm text-gray-600 px-0 lg:px-12 text-justify">
             Discover the journey behind our platform's success in empowering
             ideas and causes. Learn how projects are initiated, funds are
             raised, and dreams are realized. Explore a seamless process that

@@ -8,16 +8,16 @@ export default function Slider3() {
             #1 trusted fund-raising platform
           </p>
           <div className="text-center space-y-5">
-            <h1 className="text-lg md:text-2xl lg:text-4xl font-bold">
+            <h1 className="text-xl md:text-2xl lg:text-4xl font-bold">
               Innovating Ideas, Transforming Lives Through Hope
             </h1>
-            <p className="text-sm md:text-base text-gray-200 text-center w-full md:w-3/5 mx-auto">
+            <p className="text-sm md:text-base text-gray-200 text-center w-full lg:w-3/5 mx-auto">
               Discover a platform where dreams thrive and causes flourish. Unite
               with others to contribute, empower ideas, and make a
               transformative difference in communities and lives everywhere.
             </p>
           </div>
-          <div className="bg-blue-500 bg-opacity-95 rounded-lg shadow-md flex items-center justify-between gap-3 p-1.5 w-2/5 mx-auto">
+          <div className="bg-blue-500 bg-opacity-95 rounded-lg shadow-md flex items-center justify-between gap-3 p-1.5 w-full lg:w-2/5 mx-auto">
             <div>
               <input
                 type="text"
@@ -27,15 +27,19 @@ export default function Slider3() {
             </div>
             <div className="bg-white px-3 py-1 rounded-md flex items-center gap-1 hover:bg-yellow-200">
               <FiSearch className="text-blue-600" />
-              <button className="text-blue-600 text-sm">Search</button>
+              <button className="text-blue-600 text-sm hidden md:flex">
+                Search
+              </button>
             </div>
           </div>
         </div>
 
-        <div className="w-3/4 mx-auto py-8 flex items-center gap-20">
+        <div className="w-3/4 mx-auto py-8 flex flex-col lg:flex items-center gap-5 lg:gap-20">
           <div className="bg-blue-600 bg-opacity-20 backdrop-blur-sm p-5 rounded-lg border border-gray-400">
             <div className="space-y-3">
-              <h2 className="text-3xl font-bold">Empower Your Vision</h2>
+              <h2 className="text-xl md:text-3xl font-bold">
+                Empower Your Vision
+              </h2>
               <p className="text-sm text-gray-300">
                 Empower Your Vision inspires individuals to turn their dreams
                 into reality by connecting with a supportive community, raising
@@ -55,7 +59,9 @@ export default function Slider3() {
 
           <div className="bg-blue-600 bg-opacity-20 backdrop-blur-sm p-5 rounded-lg border border-gray-400">
             <div className="space-y-3">
-              <h2 className="text-3xl font-bold">Invest With Confidence</h2>
+              <h2 className="text-xl md:text-3xl font-bold">
+                Invest With Confidence
+              </h2>
               <p className="text-sm text-gray-300">
                 Invest With Confidence assures contributors of a secure,
                 transparent platform where their support drives meaningful

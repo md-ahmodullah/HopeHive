@@ -32,28 +32,28 @@
     "category_name": "Food and Dining",
     "number_of_projects": 45,
     "icon": "https://i.ibb.co/YWRWPcM/healthy-food.png",
-    "color": "yellow-200"
+    "color": "blue-100"
   },
   {
     "id": 6,
     "category_name": "Education",
     "number_of_projects": 28,
     "icon": "https://i.ibb.co/fqgMsTP/education.png",
-    "color": "blue-100"
+    "color": "yellow-200"
   },
   {
     "id": 7,
     "category_name": "Technology",
     "number_of_projects": 38,
     "icon": "https://i.ibb.co/LRGvK5C/tech.png",
-    "color": "yellow-200"
+    "color": "blue-100"
   },
   {
     "id": 8,
     "category_name": "Arts & Culture",
     "number_of_projects": 15,
     "icon": "https://i.ibb.co/qrYCN2b/arts.png",
-    "color": "blue-100"
+    "color": "yellow-200"
   },
   {
     "id": 9,
