@@ -22,17 +22,17 @@ export default function HowItWorks() {
             reality, one step at a time.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white p-4 rounded-lg shadow-md">
             <div className="flex flex-col items-center gap-2">
               <div>
                 <img
-                  src="https://i.ibb.co.com/FmnqhB4/icon1-removebg-preview.png"
+                  src="https://i.ibb.co.com/K96w1Qg/card-image.png"
                   alt=""
-                  className="w-20 h-20 object-cover"
+                  className="w-48 h-48 object-cover"
                 />
               </div>
-              <div className="space-y-3">
+              <div className="space-y-3 px-2 pb-2">
                 <h2 className="text-xl font-semibold">
                   Find Your Passionate Project
                 </h2>
@@ -41,6 +41,50 @@ export default function HowItWorks() {
                   Support meaningful causes, creative ideas, and innovative
                   ventures, and be part of a community making a real difference
                   in the world.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <div className="flex flex-col items-center gap-2">
+              <div>
+                <img
+                  src="https://i.ibb.co.com/QX75Dn1/Investment-Illustration.jpg"
+                  alt=""
+                  className="w-48 h-48 object-cover"
+                />
+              </div>
+              <div className="space-y-3 px-2 pb-2">
+                <h2 className="text-xl font-semibold">
+                  Invest Your Savings on Project
+                </h2>
+                <p className="text-xs text-gray-500 text-justify">
+                  Use your savings to support impactful projects and meaningful
+                  ideas. Empower innovations, help causes thrive, and make your
+                  investments count by driving change and creating a better
+                  future for everyone.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <div className="flex flex-col items-center gap-2">
+              <div>
+                <img
+                  src="https://i.ibb.co.com/t2Sg02L/roi.webp"
+                  alt=""
+                  className="w-48 h-48 object-cover"
+                />
+              </div>
+              <div className="space-y-3 px-2 pb-2">
+                <h2 className="text-xl font-semibold">
+                  Get Return From Invest
+                </h2>
+                <p className="text-xs text-gray-500 text-justify">
+                  Use your savings to support impactful projects and meaningful
+                  ideas. Empower innovations, help causes thrive, and make your
+                  investments count by driving change and creating a better
+                  future for everyone.
                 </p>
               </div>
             </div>
