@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 export default function AllCampaign() {
   const data = useLoaderData();
   const formatDate = (deadline) => {
@@ -9,9 +9,9 @@ export default function AllCampaign() {
   return (
     <>
       <section className="bg-blue-50 mb-2 font-poppins">
-        <div className="w-3/4 mx-auto py-16 space-y-12">
-          <h2 className="text-xl lg:text-3xl font-bold text-blue-600">
-            All Campaigns : {data.length}
+        <div className="w-11/12 mx-auto py-16 space-y-12">
+          <h2 className="text-xl lg:text-3xl font-bold text-blue-600 border-b-2 border-blue-200 pb-3">
+            All Campaigns({data.length})
           </h2>
           <div className="overflow-x-auto">
             <table className="table">
@@ -22,6 +22,7 @@ export default function AllCampaign() {
                   <th>Title</th>
                   <th>Amount</th>
                   <th>Deadline</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -31,6 +32,14 @@ export default function AllCampaign() {
                     <td>{d.title}</td>
                     <td>${d.amount}</td>
                     <td>{formatDate(d.deadline)}</td>
+                    <td>
+                      <Link
+                        to={`/details/${d._id}`}
+                        className="btn btn-primary hover:btn-warning"
+                      >
+                        See More
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -40,11 +49,4 @@ export default function AllCampaign() {
       </section>
     </>
   );
-}
-{
-  /* <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-            {data.map((d) => (
-              <Card key={d._id} info={d} />
-            ))}
-          </div> */
 }

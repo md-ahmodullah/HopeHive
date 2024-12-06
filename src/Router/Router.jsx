@@ -3,6 +3,7 @@ import AuthLayout from "../Layout/AuthLayout";
 import HomeLayout from "../Layout/HomeLayout";
 import AddNewCampaign from "../Pages/AddNewCampaign";
 import AllCampaign from "../Pages/AllCampaign";
+import Details from "../Pages/Details";
 import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
@@ -25,6 +26,16 @@ export const router = createBrowserRouter([
         path: "/all-campaign",
         element: <AllCampaign />,
         loader: () => fetch("http://localhost:5000/campaign"),
+      },
+      {
+        path: "/details/:id",
+        element: (
+          <PrivateRouter>
+            <Details />
+          </PrivateRouter>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/campaign/${params.id}`),
       },
       {
         path: "/add-new-campaign",
