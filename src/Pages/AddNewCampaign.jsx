@@ -30,6 +30,7 @@ export default function AddNewCampaign() {
             showConfirmButton: false,
             timer: 2000,
           });
+          form.reset();
         }
       });
   };

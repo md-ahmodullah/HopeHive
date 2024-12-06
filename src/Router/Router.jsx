@@ -23,6 +23,7 @@ export const router = createBrowserRouter([
       {
         path: "/all-campaign",
         element: <AllCampaign />,
+        loader: () => fetch("http://localhost:5000/campaign"),
       },
       {
         path: "/add-new-campaign",
