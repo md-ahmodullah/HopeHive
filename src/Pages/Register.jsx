@@ -70,14 +70,14 @@ export default function Register() {
   return (
     <>
       <div className="bg-[url('https://i.ibb.co.com/WzQqTmX/bg-addnew.png')] bg-blue-700 bg-blend-multiply bg-no-repeat bg-cover bg-center min-h-[500px] font-poppins">
-        <div className="py-5 lg:py-4 font-poppins px-6">
-          <div className="bg-blue-600 bg-opacity-20 backdrop-blur-sm rounded-lg border border-gray-400 w-full md:w-1/2 lg:w-1/3 mx-auto shrink-0 shadow-2xl px-5">
-            <div className="text-center px-5 pt-3">
+        <div className="py-10 lg:py-14 font-poppins px-6">
+          <div className="bg-blue-600 bg-opacity-20 backdrop-blur-sm rounded-lg border border-gray-400 w-full md:w-1/2 lg:w-1/3 mx-auto shrink-0 shadow-2xl py-6 px-4">
+            <div className="text-center px-5">
               <h1 className="text-2xl font-semibold text-yellow-300">
                 Register Your Account
               </h1>
             </div>
-            <div className="px-5 py-1">
+            <div className="">
               <form onSubmit={handleSubmit}>
                 <div className="form-control">
                   <label className="label">
@@ -90,8 +90,8 @@ export default function Register() {
                     <input
                       type="text"
                       name="name"
-                      placeholder="Mr Thingumbob"
-                      className="grow"
+                      placeholder="Name"
+                      className="grow text-gray-200"
                       required
                     />
                   </label>
@@ -107,8 +107,8 @@ export default function Register() {
                     <input
                       type="text"
                       name="photo"
-                      placeholder="https://google.com/mr/thingumbob.jpg"
-                      className="grow"
+                      placeholder="Photo URL"
+                      className="grow text-gray-200"
                       required
                     />
                   </label>
@@ -132,8 +132,8 @@ export default function Register() {
                     <input
                       type="email"
                       name="email"
-                      className="grow"
-                      placeholder="mrthingumbob@gmail.com"
+                      className="grow text-gray-200"
+                      placeholder="Email"
                       required
                     />
                   </label>
@@ -160,8 +160,8 @@ export default function Register() {
                     <input
                       type={isShow ? "text" : "password"}
                       name="password"
-                      className="grow"
-                      placeholder="Z^a6vf8P#"
+                      className="grow text-gray-200"
+                      placeholder="Password"
                       required
                     />
                     {isShow ? (
@@ -211,7 +211,7 @@ export default function Register() {
                 </div>
               </form>
             </div>
-            <div className="flex items-center justify-center text-xs pb-3 font-medium">
+            <div className="flex items-center justify-center text-xs  font-medium">
               <p className="pr-2 text-gray-200">Already have an account?</p>
               <Link to="/auth/login" className="text-yellow-300 underline">
                 Log In

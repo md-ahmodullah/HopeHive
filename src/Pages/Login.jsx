@@ -57,15 +57,15 @@ export default function Login() {
   };
   return (
     <>
-      <div className="bg-[url('https://i.ibb.co.com/WzQqTmX/bg-addnew.png')] bg-blue-700 bg-blend-multiply bg-no-repeat bg-cover bg-center min-h-[600px] font-poppins">
-        <div className="my-6 py-5 lg:py-16 font-poppins px-6">
-          <div className="bg-blue-600 bg-opacity-20 backdrop-blur-sm rounded-lg border border-gray-400 w-full md:w-1/2 lg:w-1/3 mx-auto shrink-0 shadow-2xl px-6">
-            <div className="text-center px-5 py-3">
-              <h1 className="text-2xl font-semibold text-yellow-300">
+      <div className="bg-[url('https://i.ibb.co.com/WzQqTmX/bg-addnew.png')] bg-blue-700 bg-blend-multiply bg-no-repeat bg-cover bg-center min-h-[500px] font-poppins">
+        <div className="py-10 lg:py-16 font-poppins px-6">
+          <div className="bg-blue-600 bg-opacity-20 backdrop-blur-sm rounded-lg border border-gray-400 w-full md:w-1/2 lg:w-1/3 mx-auto shrink-0 shadow-2xl py-6 px-4">
+            <div className="text-center">
+              <h1 className="text-2xl font-semibold text-yellow-500">
                 Login Your Account
               </h1>
             </div>
-            <div className="px-2 py-3 space-y-2">
+            <div className="py-3 space-y-2">
               <form onSubmit={handleSubmit}>
                 <div className="form-control">
                   <label className="label">
@@ -86,7 +86,7 @@ export default function Login() {
                     <input
                       type="email"
                       name="email"
-                      className="grow"
+                      className="grow text-gray-200"
                       placeholder="Email"
                       required
                     />
@@ -114,7 +114,7 @@ export default function Login() {
                     <input
                       type={isShow ? "text" : "password"}
                       name="password"
-                      className="grow"
+                      className="grow text-gray-200"
                       placeholder="password"
                       required
                     />
@@ -154,7 +154,7 @@ export default function Login() {
                 </div>
               </form>
             </div>
-            <div className="flex items-center justify-center text-xs pb-6 font-medium">
+            <div className="flex items-center justify-center text-xs font-medium">
               <p className="pr-2 text-gray-200">Don't Have An Account?</p>
               <Link
                 to="/auth/register"

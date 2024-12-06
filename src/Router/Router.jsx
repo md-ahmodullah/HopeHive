@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import MyCampaign from "../Pages/MyCampaign";
 import MyDonations from "../Pages/MyDonations";
 import Register from "../Pages/Register";
+import Update from "../Pages/Update";
 import PrivateRouter from "./PrivateRouter";
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,7 @@ export const router = createBrowserRouter([
             <MyCampaign />
           </PrivateRouter>
         ),
+        loader: () => fetch("http://localhost:5000/campaign"),
       },
       {
         path: "/my-donations",
@@ -48,6 +50,16 @@ export const router = createBrowserRouter([
             <MyDonations />
           </PrivateRouter>
         ),
+      },
+      {
+        path: "/update/:id",
+        element: (
+          <PrivateRouter>
+            <Update />
+          </PrivateRouter>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/myCampaign/${params.id}`),
       },
     ],
   },

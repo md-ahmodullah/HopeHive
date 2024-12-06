@@ -26,7 +26,7 @@ export default function Slider() {
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      autoplay={{ delay: 4000, disableOnInteraction: false }}
     >
       <SwiperSlide>
         <Slider1 />

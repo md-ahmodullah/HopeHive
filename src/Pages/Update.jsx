@@ -1,10 +1,9 @@
-import { useContext } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { AuthContext } from "../Provider/AuthProvider";
-export default function AddNewCampaign() {
-  const { user } = useContext(AuthContext);
-
-  const handleSubmit = (e) => {
+export default function Update() {
+  const updateCampaign = useLoaderData();
+  const navigate = useNavigate();
+  const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
@@ -15,7 +14,7 @@ export default function AddNewCampaign() {
     const amount = form.amount.value;
     const deadline = form.deadline.value;
     const photo = form.photo.value;
-    const newCampaign = {
+    const updatedCampaign = {
       email,
       username,
       title,
@@ -25,25 +24,24 @@ export default function AddNewCampaign() {
       deadline,
       photo,
     };
-
-    fetch("http://localhost:5000/campaign", {
-      method: "POST",
+    fetch(`http://localhost:5000/myCampaign/${updateCampaign._id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newCampaign),
+      body: JSON.stringify(updatedCampaign),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             position: "center",
             icon: "success",
             title: "Your campaign has been saved",
             showConfirmButton: false,
-            timer: 2000,
+            timer: 3000,
           });
-          form.reset();
+          navigate("/my-campaign");
         }
       });
   };
@@ -53,12 +51,12 @@ export default function AddNewCampaign() {
         <div className="w-full lg:w-3/5 mx-auto py-12 px-5">
           <div className="bg-blue-600 bg-opacity-20 backdrop-blur-sm p-5 rounded-lg border border-gray-400">
             <h2 className="text-xl md:text-3xl font-bold text-yellow-400 text-center">
-              Add New Campaign
+              Update Campaign
             </h2>
             <div className="space-y-3 pt-8">
               <form
                 className="grid grid-cols-1 md:grid-cols-2 gap-5"
-                onSubmit={handleSubmit}
+                onSubmit={handleUpdate}
               >
                 <div>
                   <label className="label">
@@ -69,7 +67,7 @@ export default function AddNewCampaign() {
                   <input
                     type="email"
                     name="email"
-                    value={user?.email}
+                    value={updateCampaign?.email}
                     className="bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-yellow-400 w-full"
                     required
                   />
@@ -83,7 +81,7 @@ export default function AddNewCampaign() {
                   <input
                     type="text"
                     name="username"
-                    value={user?.displayName}
+                    value={updateCampaign?.displayName}
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-yellow-400"
                     required
                   />
@@ -96,8 +94,9 @@ export default function AddNewCampaign() {
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. Change Starts Here"
+                    placeholder=""
                     name="title"
+                    defaultValue={updateCampaign.title}
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-gray-200"
                     required
                   />
@@ -110,7 +109,8 @@ export default function AddNewCampaign() {
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. Startup, Business, Ideas"
+                    placeholder=""
+                    defaultValue={updateCampaign.type}
                     name="type"
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-gray-200"
                     required
@@ -124,8 +124,9 @@ export default function AddNewCampaign() {
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. It is quite brilliant move to start changes through crowd funding.."
+                    placeholder=""
                     name="description"
+                    defaultValue={updateCampaign.description}
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-gray-200"
                     required
                   />
@@ -138,7 +139,8 @@ export default function AddNewCampaign() {
                   </label>
                   <input
                     type="number"
-                    placeholder="e.g. 1200"
+                    placeholder=""
+                    defaultValue={updateCampaign.amount}
                     name="amount"
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-gray-200 appearance-none"
                     style={{
@@ -155,7 +157,8 @@ export default function AddNewCampaign() {
                   </label>
                   <input
                     type="date"
-                    placeholder="e.g. dd/mm/yyyy"
+                    placeholder=""
+                    defaultValue={updateCampaign.deadline}
                     name="deadline"
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-gray-200 appearance-none"
                     style={{
@@ -172,14 +175,15 @@ export default function AddNewCampaign() {
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. https://i.ibb.co.com/crowdfunding.png"
+                    placeholder=""
                     name="photo"
+                    defaultValue={updateCampaign.photo}
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-gray-200"
                     required
                   />
                 </div>
                 <button className="btn btn-outline text-yellow-400 w-full hover:btn-warning hover:text-black col-span-1 md:col-span-2 mt-4 text-base">
-                  Add Campaign
+                  Update Campaign
                 </button>
               </form>
             </div>

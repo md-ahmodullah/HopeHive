@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 export default function Category() {
   const [data, setData] = useState([]);
 
-  console.log(data);
-
   useEffect(() => {
     fetch("/category.json")
       .then((result) => result.json())

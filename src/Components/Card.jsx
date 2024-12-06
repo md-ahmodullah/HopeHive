@@ -3,9 +3,14 @@ import { IoBarChart } from "react-icons/io5";
 import { PiFlagFill } from "react-icons/pi";
 export default function Card({ info }) {
   const { title, type, description, amount, deadline, photo } = info;
-  const collected = parseInt(amount * 0.07);
-  const need = amount - collected;
-  console.log(title, type, description, amount, deadline, photo);
+  const collected = (amount * 0.7) / 1000;
+  const need_ = amount / 1000 - collected;
+  const need = need_.toFixed(2);
+  const formatDate = () => {
+    const options = { day: "2-digit", month: "short", year: "numeric" };
+    const date = new Date(deadline); // Parse the input date
+    return date.toLocaleDateString("en-US", options);
+  };
 
   return (
     <>
@@ -19,23 +24,32 @@ export default function Card({ info }) {
         </figure>
 
         <div className="card-body">
-          <h2 className="text-lg font-medium text-black">{title}</h2>
-          <p className="text-sm text-gray-500">{description}</p>
-          <div className="flex items-center gap-2">
-            <BiCategory />
-            <p className="text-sm text-gray-700 font-medium">{type}</p>
+          <h2 className="text-base font-semibold text-black">{title}</h2>
+          <p className="text-xs text-gray-500 py-1">{description}</p>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <BiCategory />
+              <p className="text-sm text-gray-700 font-medium">{type}</p>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <IoBarChart />
+              <p className="text-base text-gray-700 font-medium">${amount}</p>
+            </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <IoBarChart />
-            <p className="text-sm text-gray-700 font-medium">${amount}</p>
+            <PiFlagFill className="text-red-600" />
+            <p className="text-red-600 font-semibold">Deadline</p>
+            <span className="text-sm text-red-600 font-semibold">
+              {formatDate()}
+            </span>
           </div>
-
           <div className="bg-blue-100 rounded-lg">
-            <div className="flex items-center">
-              <div className="stat">
+            <div className="flex items-center overflow-hidden">
+              <div className="stat pr-2">
                 <div className="text-gray-700 font-semibold">
-                  {amount / 10}K
+                  {amount / 1000}K
                 </div>
                 <div className="text-sm text-gray-600">Goal</div>
               </div>
@@ -73,13 +87,6 @@ export default function Card({ info }) {
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            <PiFlagFill className="text-red-600" />
-            <p className="text-red-600 font-semibold">Deadline</p>
-            <span className="text-sm text-red-600 font-semibold">
-              {deadline}
-            </span>
-          </div>
           <div className="pt-3">
             <button className="btn btn-outline text-orange-500 w-full hover:bg-orange-500">
               Details
