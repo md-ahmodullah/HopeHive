@@ -6,8 +6,6 @@ export default function Update() {
   const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
-    const email = form.email.value;
-    const username = form.username.value;
     const title = form.title.value;
     const type = form.type.value;
     const description = form.description.value;
@@ -15,8 +13,6 @@ export default function Update() {
     const deadline = form.deadline.value;
     const photo = form.photo.value;
     const updatedCampaign = {
-      email,
-      username,
       title,
       type,
       description,
@@ -81,7 +77,7 @@ export default function Update() {
                   <input
                     type="text"
                     name="username"
-                    value={updateCampaign?.displayName}
+                    value={updateCampaign?.displayName || "Lost it"}
                     className="w-full bg-transparent outline-none border border-gray-300 px-4 py-2 rounded-lg text-yellow-400"
                     required
                   />

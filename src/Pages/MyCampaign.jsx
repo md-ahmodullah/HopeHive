@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 export default function MyCampaign() {
   const [campaigns, setCampaigns] = useState([]);
@@ -17,6 +18,38 @@ export default function MyCampaign() {
     const options = { day: "2-digit", month: "short", year: "numeric" };
     const date = new Date(deadline); // Parse the input date
     return date.toLocaleDateString("en-US", options);
+  };
+
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/myCampaign/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+              const remaining = campaigns.filter(
+                (campaign) => campaign._id !== _id
+              );
+              setCampaigns(remaining);
+            }
+          });
+      }
+    });
   };
   return (
     <>
@@ -51,7 +84,10 @@ export default function MyCampaign() {
                             Update
                           </button>
                         </Link>
-                        <button className="btn btn-error text-white bg-red-600">
+                        <button
+                          onClick={() => handleDelete(campaign._id)}
+                          className="btn btn-error text-white bg-red-600"
+                        >
                           Delete
                         </button>
                       </div>
