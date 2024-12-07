@@ -54,9 +54,9 @@ export default function MyCampaign() {
   return (
     <>
       <section className="bg-blue-50 mb-2 font-poppins">
-        <div className="w-3/4 mx-auto py-16 space-y-12">
-          <h2 className="text-xl lg:text-3xl font-bold text-blue-600">
-            My Campaigns : {campaigns.length}
+        <div className="w-full px-5 md:w-10/12 mx-auto py-16 space-y-12">
+          <h2 className="text-xl lg:text-3xl font-bold text-blue-600 border-b-2 border-blue-200 pb-3">
+            My Campaigns({campaigns.length})
           </h2>
           <div className="overflow-x-auto">
             <table className="table">
@@ -78,15 +78,15 @@ export default function MyCampaign() {
                     <td>${campaign.amount}</td>
                     <td>{formatDate(campaign.deadline)}</td>
                     <td>
-                      <div className="flex items-center gap-1">
+                      <div className="flex flex-col md:flex-row items-start md:items-center gap-1">
                         <Link to={`/update/${campaign._id}`}>
-                          <button className="btn btn-primary text-white">
+                          <button className="btn btn-sm btn-primary text-white">
                             Update
                           </button>
                         </Link>
                         <button
                           onClick={() => handleDelete(campaign._id)}
-                          className="btn btn-error text-white bg-red-600"
+                          className="btn btn-sm btn-error text-white bg-red-600"
                         >
                           Delete
                         </button>

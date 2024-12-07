@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import Card from "../Components/Card";
+import Card from "../Components/DetailsData";
 export default function Details() {
   const data = useLoaderData();
 

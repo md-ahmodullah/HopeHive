@@ -9,7 +9,7 @@ export default function AllCampaign() {
   return (
     <>
       <section className="bg-blue-50 mb-2 font-poppins">
-        <div className="w-11/12 mx-auto py-16 space-y-12">
+        <div className="w-full px-2 md:w-11/12 lg:w-10/12 mx-auto py-16 space-y-12">
           <h2 className="text-xl lg:text-3xl font-bold text-blue-600 border-b-2 border-blue-200 pb-3">
             All Campaigns({data.length})
           </h2>

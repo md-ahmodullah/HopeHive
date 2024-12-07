@@ -61,6 +61,7 @@ export const router = createBrowserRouter([
             <MyDonations />
           </PrivateRouter>
         ),
+        loader: () => fetch("http://localhost:5000/donate"),
       },
       {
         path: "/update/:id",
