@@ -6,7 +6,7 @@ export default function AllCampaign() {
   const [data, setData] = useState(loadedData);
   const formatDate = (deadline) => {
     const options = { day: "2-digit", month: "short", year: "numeric" };
-    const date = new Date(deadline); // Parse the input date
+    const date = new Date(deadline);
     return date.toLocaleDateString("en-US", options);
   };
   const handleSort = () => {
@@ -31,7 +31,6 @@ export default function AllCampaign() {
           </div>
           <div className="overflow-x-auto">
             <table className="table">
-              {/* head */}
               <thead className="text-gray-400">
                 <tr>
                   <th></th>
