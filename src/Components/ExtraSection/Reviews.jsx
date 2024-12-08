@@ -7,7 +7,7 @@ export default function Reviews() {
         Satisfied Words for <br />
         Hope Hive
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center lg:items-start gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-start lg:items-start gap-5">
         <div className="space-y-7">
           <ImQuotesLeft className="text-4xl text-yellow-500" />
           <h3 className="font-medium text-lg w-full lg:w-3/5 ">
@@ -27,7 +27,7 @@ export default function Reviews() {
         </div>
         <div>
           <img
-            src="https://i.ibb.co.com/9vHg0Gr/reviews.png"
+            src="https://i.ibb.co.com/DQR72W0/20241208-085427.png"
             alt=""
             className="rounded-lg"
           />

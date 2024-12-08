@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 export default function HowItWorks() {
   return (
-    <section className="bg-blue-50 my-10 font-poppins">
+    <section className="bg-transparent my-10 font-poppins">
       <div className="w-3/4 mx-auto py-16 space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5">
           <div className="space-y-5">
@@ -13,7 +13,7 @@ export default function HowItWorks() {
               Create An Account
             </Link>
           </div>
-          <p className="text-sm text-gray-600 px-0 lg:px-12 text-justify">
+          <p className="text-sm text-gray-500 px-0 lg:px-12 text-justify">
             Discover the journey behind our platform's success in empowering
             ideas and causes. Learn how projects are initiated, funds are
             raised, and dreams are realized. Explore a seamless process that
@@ -23,16 +23,16 @@ export default function HowItWorks() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white p-4 rounded-lg shadow-md">
+          <div className="bg-transparent border border-gray-500 p-4 rounded-lg">
             <div className="flex flex-col items-center gap-2">
               <div>
                 <img
                   src="https://i.ibb.co.com/K96w1Qg/card-image.png"
                   alt=""
-                  className="w-48 h-48 object-cover"
+                  className="w-[320px] h-48 object-cover rounded-lg"
                 />
               </div>
-              <div className="space-y-3 px-2 pb-2">
+              <div className="space-y-3 px-2 py-2">
                 <h2 className="text-xl font-semibold">
                   Find Your Passionate Project
                 </h2>
@@ -45,16 +45,16 @@ export default function HowItWorks() {
               </div>
             </div>
           </div>
-          <div className="bg-white p-4 rounded-lg shadow-md">
+          <div className="bg-transparent border border-gray-500 p-4 rounded-lg">
             <div className="flex flex-col items-center gap-2">
               <div>
                 <img
                   src="https://i.ibb.co.com/QX75Dn1/Investment-Illustration.jpg"
                   alt=""
-                  className="w-48 h-48 object-cover"
+                  className="w-[320px] h-48 object-cover rounded-lg"
                 />
               </div>
-              <div className="space-y-3 px-2 pb-2">
+              <div className="space-y-3 px-2 py-2">
                 <h2 className="text-xl font-semibold">
                   Invest Your Savings on Project
                 </h2>
@@ -67,16 +67,16 @@ export default function HowItWorks() {
               </div>
             </div>
           </div>
-          <div className="bg-white p-4 rounded-lg shadow-md">
+          <div className="bg-transparent border border-gray-500 p-4 rounded-lg">
             <div className="flex flex-col items-center gap-2">
               <div>
                 <img
                   src="https://i.ibb.co.com/t2Sg02L/roi.webp"
                   alt=""
-                  className="w-48 h-48 object-cover"
+                  className="w-[320px] h-48 object-cover rounded-lg"
                 />
               </div>
-              <div className="space-y-3 px-2 pb-2">
+              <div className="space-y-3 px-2 py-2">
                 <h2 className="text-xl font-semibold">
                   Get Return From Invest
                 </h2>

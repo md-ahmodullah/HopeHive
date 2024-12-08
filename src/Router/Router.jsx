@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
       {
         path: "/all-campaign",
         element: <AllCampaign />,
-        loader: () => fetch("http://localhost:5000/campaign"),
+        loader: () => fetch("https://hope-hive-server.vercel.app/campaign"),
       },
       {
         path: "/details/:id",
@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/campaign/${params.id}`),
+          fetch(`https://hope-hive-server.vercel.app/campaign/${params.id}`),
       },
       {
         path: "/add-new-campaign",
@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
             <MyCampaign />
           </PrivateRouter>
         ),
-        loader: () => fetch("http://localhost:5000/campaign"),
+        loader: () => fetch("https://hope-hive-server.vercel.app/campaign"),
       },
       {
         path: "/my-donations",
@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
             <MyDonations />
           </PrivateRouter>
         ),
-        loader: () => fetch("http://localhost:5000/donate"),
+        loader: () => fetch("https://hope-hive-server.vercel.app/donate"),
       },
       {
         path: "/update/:id",
@@ -71,7 +71,7 @@ export const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/myCampaign/${params.id}`),
+          fetch(`https://hope-hive-server.vercel.app/myCampaign/${params.id}`),
       },
     ],
   },

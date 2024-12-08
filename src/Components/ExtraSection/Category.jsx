@@ -8,7 +8,7 @@ export default function Category() {
       .then((fetchData) => setData(fetchData));
   }, []);
   return (
-    <section className="font-poppins my-16 bg-blue-50">
+    <section className="font-poppins my-16 bg-transparent">
       <div className="w-3/4 mx-auto py-16">
         <h1 className="text-3xl text-center font-bold">
           Exploring The Latest <br />

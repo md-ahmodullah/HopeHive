@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { BiCategory } from "react-icons/bi";
 import { IoBarChart } from "react-icons/io5";
 import { PiFlagFill } from "react-icons/pi";
+import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 export default function Card({ info }) {
   const { user } = useContext(AuthContext);
@@ -15,7 +16,7 @@ export default function Card({ info }) {
   const need = need_.toFixed(2);
   const formatDate = () => {
     const options = { day: "2-digit", month: "short", year: "numeric" };
-    const date = new Date(deadline); // Parse the input date
+    const date = new Date(deadline);
     return date.toLocaleDateString("en-US", options);
   };
 
@@ -30,7 +31,17 @@ export default function Card({ info }) {
       deadline,
       photo,
     };
-    fetch("http://localhost:5000/donate", {
+    const lastDate = new Date(deadline);
+    const currentDate = new Date();
+    if (lastDate < currentDate) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Deadline is over!",
+      });
+      return;
+    }
+    fetch("https://hope-hive-server.vercel.app/donate", {
       method: "POST",
       headers: {
         "content-type": "application/json",

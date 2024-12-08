@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <section className="bg-blue-100 font-poppins">
-      <footer className="footer text-base-content p-10 w-11/12 mx-auto">
+    <section className="bg-transparent font-poppins border-t-2 border-gray-400">
+      <footer className="footer p-10 w-11/12 mx-auto">
         <aside className="flex items-center gap-4">
           <img
             src="https://i.ibb.co.com/JBc6RpV/Screenshot-19-removebg-preview.png"
@@ -34,7 +34,7 @@ export default function Footer() {
           <a className="link link-hover">Cookie policy</a>
         </nav>
       </footer>
-      <footer className="footer footer-center bg-blue-100 text-base-content p-4 border-t-2 border-gray-300 w-11/12 mx-auto">
+      <footer className="footer footer-center text-gray-500 bg-transparent p-4 w-11/12 mx-auto">
         <aside>
           <p>
             Copyright © {new Date().getFullYear()} - All right reserved by Hope

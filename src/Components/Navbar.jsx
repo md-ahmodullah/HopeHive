@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Theme from "./Theme";
 export default function Navbar() {
   const { user, logOut } = useContext(AuthContext);
 
@@ -24,7 +25,7 @@ export default function Navbar() {
 
   return (
     <section className="w-11/12 mx-auto font-poppins">
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-transparent">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -67,6 +68,9 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="navbar-end gap-3">
+          <div>
+            <Theme />
+          </div>
           {user && user.email ? (
             <>
               <img

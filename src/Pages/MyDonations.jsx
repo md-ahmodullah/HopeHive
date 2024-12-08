@@ -4,7 +4,7 @@ export default function MyDonations() {
   const data = useLoaderData();
   return (
     <>
-      <section className="bg-blue-50 mb-2 font-poppins">
+      <section className="bg-transparent mb-2 font-poppins">
         <div className="w-10/12 mx-auto py-16 space-y-12">
           <h2 className="text-xl lg:text-3xl font-bold text-blue-600 border-b-2 border-blue-200 pb-3">
             My Donations({data.length})

@@ -3,10 +3,9 @@ import Marquee from "react-fast-marquee";
 import RunningCard from "./RunningCard";
 export default function Running() {
   const [campaigns, setCampaigns] = useState([]);
-  console.log(campaigns);
 
   useEffect(() => {
-    fetch("http://localhost:5000/campaign/running")
+    fetch("https://hope-hive-server.vercel.app/campaign/running")
       .then((res) => res.json())
       .then((data) => setCampaigns(data));
   }, []);

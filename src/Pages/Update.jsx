@@ -20,13 +20,16 @@ export default function Update() {
       deadline,
       photo,
     };
-    fetch(`http://localhost:5000/myCampaign/${updateCampaign._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedCampaign),
-    })
+    fetch(
+      `https://hope-hive-server.vercel.app/myCampaign/${updateCampaign._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedCampaign),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
