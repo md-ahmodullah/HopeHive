@@ -1,8 +1,9 @@
 import { BiCategory } from "react-icons/bi";
 import { IoBarChart } from "react-icons/io5";
 import { PiFlagFill } from "react-icons/pi";
+import { Link } from "react-router-dom";
 export default function RunningCard({ campaign }) {
-  const { title, type, description, amount, deadline, photo } = campaign;
+  const { _id, title, type, description, amount, deadline, photo } = campaign;
   const collected = (amount * 0.7) / 1000;
   const need_ = amount / 1000 - collected;
   const need = need_.toFixed(2);
@@ -83,9 +84,12 @@ export default function RunningCard({ campaign }) {
             </div>
           </div>
           <div className="">
-            <button className="btn btn-outline text-gray-300 w-full hover:bg-orange-500 hover:text-black text-base">
+            <Link
+              to={`/details/${_id}`}
+              className="btn btn-outline text-gray-300 w-full hover:bg-orange-500 hover:text-black text-base"
+            >
               See More
-            </button>
+            </Link>
           </div>
         </div>
       </div>
