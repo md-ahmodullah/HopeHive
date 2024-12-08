@@ -50,13 +50,19 @@ export default function Card({ info }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Your Donation has been done!",
+          showConfirmButton: false,
+          timer: 2000,
+        });
       });
   };
 
   return (
     <>
-      <div className="grid grid-cols-2 items-center gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
         <figure>
           <img
             src={photo}
@@ -66,8 +72,10 @@ export default function Card({ info }) {
         </figure>
 
         <div className="card-body border-l-2 border-blue-200 pl-8">
-          <h2 className="text-2xl font-semibold text-black">{title}</h2>
-          <p className="text-base text-gray-500 py-1">{description}</p>
+          <h2 className="text-base md:text-xl font-semibold text-black">
+            {title}
+          </h2>
+          <p className="text-xs md:text-sm text-gray-500 py-1">{description}</p>
           <div className="flex items-center justify-between pb-1">
             <div className="flex items-center gap-2">
               <BiCategory className="text-base" />

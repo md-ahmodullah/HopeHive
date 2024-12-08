@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 
 export default function Register() {
-  const { user, setUser, createUser, signInWithGoogle } =
+  const { user, setUser, createUser, signInWithGoogle, updateUserProfile } =
     useContext(AuthContext);
   const [errMessage, setErrMessage] = useState("");
   const navigate = useNavigate();
@@ -38,6 +38,18 @@ export default function Register() {
         setUser(newUser);
         Swal.fire("Register Successfully!");
         navigate("/");
+        updateUserProfile({ displayName: name, photoURL: photoURL })
+          .then((result) => {
+            const newUser = result.user;
+            setUser(newUser);
+            navigate("/");
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message?.split("auth/")[1];
+            const displayError = errorMessage?.split(").")[0];
+            setErrMessage(displayError);
+          });
       })
       .catch((error) => {
         const errorCode = error.code;

@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/firebase.config.js";
@@ -37,6 +38,11 @@ export default function AuthProvider({ children }) {
       unsubscribe();
     };
   }, []);
+
+  // Update Profile
+  const updateUserProfile = (updatedData) => {
+    return updateProfile(auth.currentUser, updatedData);
+  };
   // Log Out
   const logOut = () => {
     return signOut(auth);
@@ -50,6 +56,7 @@ export default function AuthProvider({ children }) {
     logOut,
     signInWithGoogle,
     loading,
+    updateUserProfile,
   };
 
   return (
