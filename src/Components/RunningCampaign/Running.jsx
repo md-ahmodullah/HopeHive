@@ -6,9 +6,16 @@ export default function Running() {
   const [campaigns, setCampaigns] = useState([]);
 
   useEffect(() => {
-    fetch("https://hopehiveserver.vercel.app/campaign/running")
+    fetch("https://hopehiveserver.vercel.app/campaign")
       .then((res) => res.json())
-      .then((data) => setCampaigns(data));
+      .then((data) => {
+        const filteredData = data.filter((d) => {
+          const date = new Date(d.deadline);
+          const currentDate = new Date();
+          return date >= currentDate;
+        });
+        setCampaigns(filteredData);
+      });
   }, []);
 
   return (
