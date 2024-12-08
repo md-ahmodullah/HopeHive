@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
-import Tooltip from "../Tooltip";
 import TypeWriter from "../TypeWriter";
 import RunningCard from "./RunningCard";
 export default function Running() {
   const [campaigns, setCampaigns] = useState([]);
 
   useEffect(() => {
-    fetch("https://hope-hive-server.vercel.app/campaign/running")
+    fetch("https://hopehiveserver.vercel.app/campaign/running")
       .then((res) => res.json())
       .then((data) => setCampaigns(data));
   }, []);
@@ -36,7 +35,6 @@ export default function Running() {
             </div>
           </Marquee>
         </div>
-        <Tooltip />
       </section>
     </>
   );

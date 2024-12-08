@@ -41,7 +41,7 @@ export default function Card({ info }) {
       });
       return;
     }
-    fetch("https://hope-hive-server.vercel.app/donate", {
+    fetch("https://hopehiveserver.vercel.app/donate", {
       method: "POST",
       headers: {
         "content-type": "application/json",

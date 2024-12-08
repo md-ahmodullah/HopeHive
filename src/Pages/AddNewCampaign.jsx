@@ -26,7 +26,7 @@ export default function AddNewCampaign() {
       photo,
     };
 
-    fetch("https://hope-hive-server.vercel.app/campaign", {
+    fetch("https://hopehiveserver.vercel.app/campaign", {
       method: "POST",
       headers: {
         "content-type": "application/json",

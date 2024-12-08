@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Tooltip from "../Tooltip";
 export default function Category() {
   const [data, setData] = useState([]);
 
@@ -37,7 +36,6 @@ export default function Category() {
           </button>
         </div>
       </div>
-      <Tooltip />
     </section>
   );
 }

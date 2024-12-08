@@ -21,7 +21,7 @@ export default function Update() {
       photo,
     };
     fetch(
-      `https://hope-hive-server.vercel.app/myCampaign/${updateCampaign._id}`,
+      `https://hopehiveserver.vercel.app/myCampaign/${updateCampaign._id}`,
       {
         method: "PUT",
         headers: {

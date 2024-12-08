@@ -9,7 +9,7 @@ export default function MyCampaign() {
 
   useEffect(() => {
     if (userEmail) {
-      fetch(`https://hope-hive-server.vercel.app/myCampaign?email=${userEmail}`)
+      fetch(`https://hopehiveserver.vercel.app/myCampaign?email=${userEmail}`)
         .then((res) => res.json())
         .then((data) => setCampaigns(data));
     }
@@ -31,7 +31,7 @@ export default function MyCampaign() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://hope-hive-server.vercel.app/myCampaign/${_id}`, {
+        fetch(`https://hopehiveserver.vercel.app/myCampaign/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
