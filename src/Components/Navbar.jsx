@@ -46,20 +46,22 @@ export default function Navbar() {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-52 p-2 shadow gap-3 texl-black"
+              className="menu menu-sm dropdown-content bg-transparent rounded-box z-[10] mt-3 w-52 p-2 shadow gap-3 text-white border border-gray-200"
             >
               {links}
             </ul>
           </div>
           <div className="flex items-center gap-2">
-            <img
-              src="https://i.ibb.co.com/JBc6RpV/Screenshot-19-removebg-preview.png"
-              alt="Logo"
-              className="w-10 hidden md:flex"
-            />
+            <Link to="/">
+              <img
+                src="https://i.ibb.co.com/JBc6RpV/Screenshot-19-removebg-preview.png"
+                alt="Logo"
+                className="w-10 "
+              />
+            </Link>
             <Link
               to="/"
-              className="text-xl md:text-2xl text-blue-600 font-bold"
+              className="text-xl md:text-2xl text-blue-600 font-bold hidden md:flex"
             >
               HopeHive
             </Link>

@@ -113,7 +113,7 @@ export default function HowItWorks() {
   return (
     <section className="bg-transparent my-10 font-poppins">
       <div className="w-3/4 mx-auto py-16 space-y-12">
-        <Reveal keyframes={customAnimation} duration={2500}>
+        <Reveal keyframes={customAnimation} duration={1500}>
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5">
             <div className="space-y-5">
               <h2 className="text-3xl lg:text-4xl font-semibold">
@@ -159,7 +159,7 @@ export default function HowItWorks() {
                 "Use your savings to support impactful projects and meaningful ideas. Empower innovations, help causes thrive, and make your investments count by driving change and creating a better future for everyone.",
             },
           ].map((item) => (
-            <Reveal key={item.id} keyframes={customAnimation} duration={2500}>
+            <Reveal key={item.id} keyframes={customAnimation} duration={1500}>
               <div className="bg-transparent border border-gray-500 p-4 rounded-lg">
                 <div className="flex flex-col items-center gap-2">
                   <div>

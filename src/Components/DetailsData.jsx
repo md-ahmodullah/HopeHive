@@ -125,7 +125,7 @@ export default function Card({ info }) {
                   <p className="text-gray-600 text-base">
                     Collected:{" "}
                     <span className="text-base font-medium text-gray-700">
-                      {collected}K
+                      {collected.toFixed(2)}K
                     </span>
                   </p>
                 </div>

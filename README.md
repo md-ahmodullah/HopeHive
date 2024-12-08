@@ -4,8 +4,6 @@ Welcome to Hope Hive! This project is a feature-rich platform showcasing modern 
 
 Visit the live website: [Hope Hive](https://hope-hive.netlify.app/)
 
-Alternative Linke: [Hope Hive](https://calm-duckanoo-d2f59d.netlify.app/)
-
 ## Features
 
 - **Firebase Authentication**: Secure user authentication with email/password and social login options for enhanced usability and security.
