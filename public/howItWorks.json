@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co.com/K96w1Qg/card-image.png",
+    "title": "Find Your Passionate Project",
+    "description": "Discover projects that ignite your passion and inspire action. Support meaningful causes, creative ideas, and innovative ventures, and be part of a community making a real difference in the world."
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co.com/QX75Dn1/Investment-Illustration.jpg",
+    "title": "Invest Savings on Project",
+    "description": "Use your savings to support impactful projects and meaningful ideas. Empower innovations, help causes thrive, and make your investments count by creating a better future."
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co.com/t2Sg02L/roi.webp",
+    "title": "Get Return From Invest",
+    "description": "Use your savings to support impactful projects and meaningful ideas. Empower innovations, help causes thrive, and make your investments count by driving change."
+  }
+]

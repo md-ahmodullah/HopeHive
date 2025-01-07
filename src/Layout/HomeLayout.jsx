@@ -5,7 +5,9 @@ import Navbar from "../Components/Navbar";
 export default function HomeLayout() {
   return (
     <>
-      <Navbar />
+      <div className="sticky top-0 z-10 bg-white backdrop-filter backdrop-blur-sm bg-opacity-50 text-black">
+        <Navbar />
+      </div>
       <div className="min-h-[calc(100vh-350px)]">
         <Outlet />
       </div>

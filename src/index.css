@@ -16,3 +16,12 @@ html.dark {
   font-weight: 600;
   font-family: "Poppins";
 }
+
+.company a.active {
+  background-color: rgb(236, 122, 29);
+  border-radius: 0px;
+  padding: 12px 40px;
+  text-decoration: none;
+  color: white;
+  font-family: "Poppins";
+}

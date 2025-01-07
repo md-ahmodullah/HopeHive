@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Top 5 Tech Trends Shaping the Future of Business",
+    "category": "Tech",
+    "description": "Explore the latest technological advancements that are transforming the business landscape."
+  },
+  {
+    "id": 2,
+    "title": "The Power of Storytelling in Marketing",
+    "category": "Marketing",
+    "description": "Learn how to craft compelling narratives to connect with your audience and build a strong brand."
+  },
+  {
+    "id": 3,
+    "title": "Understanding Financial Statements for Entrepreneurs",
+    "category": "Finance",
+    "description": "Gain a solid understanding of key financial statements and how to use them to make informed business decisions."
+  },
+  {
+    "id": 4,
+    "title": "Building a High-Performing Team",
+    "category": "Leadership",
+    "description": "Discover essential strategies for building and managing a successful and motivated team."
+  },
+  {
+    "id": 5,
+    "title": "The Importance of Customer Relationship Management (CRM)",
+    "category": "Marketing",
+    "description": "Learn how to effectively use CRM systems to build stronger customer relationships and improve sales."
+  },
+  {
+    "id": 6,
+    "title": "Securing Funding for Your Startup",
+    "category": "Finance",
+    "description": "Explore different funding options, from angel investors to venture capital, and learn how to prepare a compelling pitch."
+  },
+  {
+    "id": 7,
+    "title": "Digital Marketing Strategies for Small Businesses",
+    "category": "Marketing",
+    "description": "Discover effective digital marketing strategies to reach your target audience and grow your online presence."
+  },
+  {
+    "id": 8,
+    "title": "The Importance of Innovation in Business",
+    "category": "Leadership",
+    "description": "Learn how to foster a culture of innovation within your organization and drive continuous improvement."
+  },
+  {
+    "id": 9,
+    "title": "Essential Legal and Regulatory Considerations for Entrepreneurs",
+    "category": "Legal",
+    "description": "Understand the legal and regulatory framework within which your business operates."
+  },
+  {
+    "id": 10,
+    "title": "Developing a Winning Business Plan",
+    "category": "Business Planning",
+    "description": "Learn how to create a comprehensive business plan that outlines your business goals, strategies, and financial projections."
+  }
+]

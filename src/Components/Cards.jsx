@@ -1,16 +1,6 @@
-import { BiCategory } from "react-icons/bi";
-import { IoBarChart } from "react-icons/io5";
-import { PiFlagFill } from "react-icons/pi";
+import { Link } from "react-router-dom";
 export default function Cards({ info }) {
-  const { title, type, description, amount, deadline, photo } = info;
-  const collected = (amount * 0.7) / 1000;
-  const need_ = amount / 1000 - collected;
-  const need = need_.toFixed(2);
-  const formatDate = () => {
-    const options = { day: "2-digit", month: "short", year: "numeric" };
-    const date = new Date(deadline);
-    return date.toLocaleDateString("en-US", options);
-  };
+  const { _id, title, description, photo, amount } = info;
   return (
     <>
       <div className="card bg-base-100 shadow-xl">
@@ -18,70 +8,16 @@ export default function Cards({ info }) {
           <img
             src={photo}
             alt={title}
-            className="w-full h-[300px] object-cover"
+            className="w-full h-[200px] object-cover"
           />
         </figure>
-        <div className="card-body">
-          <h2 className="text-2xl font-semibold text-black">{title}</h2>
-          <p className="text-base text-gray-500 py-1">{description}</p>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <BiCategory className="text-base" />
-              <p className="text-base text-gray-700 font-medium">{type}</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <IoBarChart />
-              <p className="text-base text-gray-700 font-medium">${amount}</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <PiFlagFill className="text-red-600" />
-            <p className="text-red-600 font-semibold">Deadline</p>
-            <span className="text-sm text-red-600 font-semibold">
-              {formatDate()}
-            </span>
-          </div>
-          <div className="bg-blue-100 rounded-lg">
-            <div className="flex items-center overflow-hidden">
-              <div className="stat pr-2">
-                <div className="text-gray-700 font-semibold">
-                  {amount / 1000}K
-                </div>
-                <div className="text-sm text-gray-600">Goal</div>
-              </div>
-              <div className="stat">
-                <div className="text-gray-700 font-semibold">34</div>
-                <div className="text-sm text-gray-600">Invested</div>
-              </div>
-              <div className="stat">
-                <div className="text-gray-700 font-semibold">12%</div>
-                <div className="text-sm text-gray-600">Equity</div>
-              </div>
-            </div>
-            <div className="px-4">
-              <div className="w-full">
-                <progress
-                  className="progress progress-primary"
-                  value="70"
-                  max="100"
-                ></progress>
-              </div>
-              <div className="flex items-center justify-between w-full pt-1 pb-3">
-                <p className="text-gray-600 text-xs">
-                  Collected:{" "}
-                  <span className="text-sm font-medium text-gray-700">
-                    {collected}K
-                  </span>
-                </p>
-                <p className="text-gray-600 text-xs">
-                  Need:{" "}
-                  <span className="text-sm font-medium text-gray-700">
-                    {need}K
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="card-body p-4">
+          <h2 className="text-base md:text-lg font-semibold">{title}</h2>
+          <h2 className="text-base md:text-lg font-semibold">${amount}</h2>
+          <p className="text-sm py-1">{description}</p>
+          <Link to={`/details/${_id}`} className="btn btn-primary text-white">
+            View Details
+          </Link>
         </div>
       </div>
     </>

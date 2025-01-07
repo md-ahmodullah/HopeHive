@@ -1,0 +1,27 @@
+[
+  {
+    "name": "MD AHMODULLAH",
+    "role": "Founder & CEO",
+    "photo": "https://i.ibb.co/6JV37cH/myimage.jpg"
+  },
+  {
+    "name": "John Doe",
+    "role": "Chief Technology Officer",
+    "photo": "https://i.ibb.co/wJV8FCb/male4.png"
+  },
+  {
+    "name": "David Smith",
+    "role": "Head of Marketing",
+    "photo": "https://i.ibb.co/54qkgvv/male3.png"
+  },
+  {
+    "name": "David Lee",
+    "role": "Community Manager",
+    "photo": "https://i.ibb.co/PxP53wh/male2.png"
+  },
+  {
+    "name": "Michael Jones",
+    "role": "Customer Support Specialist",
+    "photo": "https://i.ibb.co/7JWRfzL/male1.png"
+  }
+]
