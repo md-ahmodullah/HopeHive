@@ -2,6 +2,8 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 export default function Update() {
   const updateCampaign = useLoaderData();
+  console.log(updateCampaign?.displayName);
+
   const navigate = useNavigate();
   const handleUpdate = (e) => {
     e.preventDefault();

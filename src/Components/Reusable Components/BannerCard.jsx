@@ -6,7 +6,7 @@ export default function BannerCards({ title, subTitle, btn, btnText, img }) {
         <h2 className="text-xl md:text-2xl font-bold">{title}</h2>
         <p className="text-sm text-gray-300">{subTitle}</p>
         <div className="flex items-start justify-between">
-          <Link to="/invest" className={`btn btn-${btn}`}>
+          <Link to="/invest" className={`${btn}`}>
             {btnText}
           </Link>
           <img src={img} alt="" className="w-14 h-14 object-cover" />

@@ -28,7 +28,9 @@ export default function Sliders() {
     >
       <SwiperSlide>
         <Slider
-          img={"https://i.ibb.co.com/ftk4fcW/slider1.jpg"}
+          img={
+            "https://i.ibb.co.com/RYrhw59/Blog-page-images-3-141-768x402.jpg"
+          }
           title={"Empowering Dreams, One Contribution at a Time"}
           subTitle={
             "A alive. To support personal needs, creative projects, and innovative startups. Let's turn hope into action!"
@@ -37,7 +39,9 @@ export default function Sliders() {
       </SwiperSlide>
       <SwiperSlide>
         <Slider
-          img={"https://i.ibb.co.com/zGY0KLQ/slider2.jpg"}
+          img={
+            "https://i.ibb.co.com/RYrhw59/Blog-page-images-3-141-768x402.jpg"
+          }
           title={"Building Dreams Together, One Step Forward"}
           subTitle={
             "Join a community to support innovative ideas, heartfelt causes, and projects. Together, we can turn hope into action and create meaningful, lasting impact in lives around the world."

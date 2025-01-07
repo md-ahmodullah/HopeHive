@@ -26,7 +26,7 @@ export default function Slider({ img, title, subTitle }) {
             subTitle={
               "Empower Your Vision inspires individuals to turn their dreams into reality by connecting with a supportive community."
             }
-            btn={"warning"}
+            btn={"btn btn-warning"}
             btnText={"Get Funded Today"}
             img={"https://i.ibb.co.com/85GZNBW/pngwing-com-1.png"}
           />
@@ -36,7 +36,7 @@ export default function Slider({ img, title, subTitle }) {
             subTitle={
               "Invest With Confidence assures contributors of a secure, transparent platform where their support drives meaningful changes."
             }
-            btn={"info"}
+            btn={"btn btn-info"}
             btnText={"Get Invest Today"}
             img={
               "https://i.ibb.co.com/JdhmJkz/Screenshot-21-removebg-preview.png"

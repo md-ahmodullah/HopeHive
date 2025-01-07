@@ -1,3 +1,5 @@
+# HopeHive Crowdfunding Platform
+
 Welcome to Hope Hive! This project is a feature-rich platform showcasing modern web development techniques and tools to deliver a seamless user experience.
 
 ## Live Site
@@ -19,17 +21,119 @@ Visit the live website: [Hope Hive](https://hope-hive.netlify.app/)
 - **Secure API Endpoints**: Developed and hosted server-side logic on Vercel, providing fast and secure endpoints.
 - **Optimized Performance**: Minimal load times and efficient data fetching to ensure a smooth browsing experience.
 
-## Technologies Used
+---
 
-- **React.js**: For building the dynamic user interface.
-- **React Router**: For navigation and route management.
-- **Context API**: For efficient state management.
-- **Firebase**: For user authentication and authorization.
-- **MongoDB**: For database storage and retrieval.
-- **Express.js & Node.js**: For backend server development.
-- **Vercel**: For server-side deployment.
-- **Netlify**: For client-side deployment.
-- **Tailwind CSS**: For styling and responsive design.
-- **React Typewriter & Tooltip**: For interactive UI elements.
+## Technology Stack
 
-Explore the live site to see these features in action and learn how modern web technologies come together to create an exceptional user experience!
+- **Frontend**: React, Tailwind CSS, DaisyUI, React Icons
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: Firebase
+- **Package Manager**: npm
+
+---
+
+## Installation and Setup
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- Node.js (v18.3.1 or higher)
+- npm (v9.6.0 or higher)
+- Git
+
+### Steps to Run Locally
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/hopehive.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd hopehive
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Set up Firebase:
+
+   - Create a Firebase project and configure authentication.
+   - Replace the `firebaseConfig` in `src/firebase/firebaseConfig.js` with your Firebase project details.
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+6. Open your browser and go to `http://localhost:3000` to view the site.
+
+---
+
+## Dependencies
+
+**Core Dependencies**:
+
+```json
+{
+  "@emotion/react": "^11.13.5",
+  "firebase": "^11.0.2",
+  "localforage": "^1.10.0",
+  "lottie-react": "^2.4.0",
+  "match-sorter": "^8.0.0",
+  "react": "^18.3.1",
+  "react-awesome-reveal": "^4.2.14",
+  "react-dom": "^18.3.1",
+  "react-fast-marquee": "^1.6.5",
+  "react-icons": "^5.4.0",
+  "react-router-dom": "^7.0.2",
+  "react-simple-typewriter": "^5.0.1",
+  "react-tooltip": "^5.28.0",
+  "sort-by": "^1.2.0",
+  "sweetalert2": "^11.14.5",
+  "swiper": "^11.1.15"
+}
+```
+
+**Development Dependencies**:
+
+```json
+{
+  "@eslint/js": "^9.15.0",
+  "@types/react": "^18.3.12",
+  "@types/react-dom": "^18.3.1",
+  "@vitejs/plugin-react": "^4.3.4",
+  "autoprefixer": "^10.4.20",
+  "daisyui": "^4.12.14",
+  "eslint": "^9.15.0",
+  "eslint-plugin-react": "^7.37.2",
+  "eslint-plugin-react-hooks": "^5.0.0",
+  "eslint-plugin-react-refresh": "^0.4.14",
+  "globals": "^15.12.0",
+  "postcss": "^8.4.49",
+  "tailwindcss": "^3.4.15",
+  "vite": "^6.0.1"
+}
+```
+
+---
+
+## Guidelines
+
+- **Code Style**: Follow the ESLint rules defined in the project.
+- **File Structure**: Maintain a clean and modular component-based structure.
+- **API Configuration**: Replace placeholders with your backend API URL in the fetch requests.
+- **State Management**: Use Context API for managing global state.
+- **Security**: Ensure that protected routes and user-specific data fetching are correctly implemented.
+
+---
+
+## Contribution
+
+Feel free to submit issues or pull requests for improvements and new features. Ensure all code follows the project's coding standards and is well-documented.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
