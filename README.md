@@ -1,5 +1,7 @@
 # HopeHive Crowdfunding Platform
 
+![Website Image](https://i.ibb.co.com/1GVfYwV/githope.png)
+
 Welcome to Hope Hive! This project is a feature-rich platform showcasing modern web development techniques and tools to deliver a seamless user experience.
 
 ## Live Site
